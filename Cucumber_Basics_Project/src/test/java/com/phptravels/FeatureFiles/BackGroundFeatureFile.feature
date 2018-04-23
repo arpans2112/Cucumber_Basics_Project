@@ -1,4 +1,4 @@
-Feature: Facebook Login Feature test
+Feature: BackGroundFeatureFile
 
 Background:  Common Login Step
 	Given Login lending page

@@ -1,4 +1,4 @@
-Feature: Facebook Login Feature test
+Feature: DataTable_ScenarioOutLine Feature
 
 Scenario Outline: login with valid id and password
   Given Login lending page

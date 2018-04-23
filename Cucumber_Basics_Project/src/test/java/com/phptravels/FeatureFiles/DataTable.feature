@@ -1,4 +1,4 @@
-Feature: Facebook Login Feature test
+Feature: DataTable Feature
 
 Scenario: login with valid id and password
   Given Login lending page
