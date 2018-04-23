@@ -1,0 +1,63 @@
+package com.phptravels.StepDefinationFiles.ExtentReportConfigurationSD;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+
+import com.AbstractBase.AbstractBaseStepDefShared;
+import com.AbstractBase.AbstractBaseTestCase;
+import com.Utilities.PropertyFileReader;
+import com.config.Configuration;
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+
+
+
+public class ExtentReportConfigurationSD {
+	
+	WebDriver driver ;
+	
+   public ExtentReportConfigurationSD(AbstractBaseStepDefShared abstractBaseStepDefShared){
+	   
+	   driver = abstractBaseStepDefShared.setupScenario();
+	   
+   }
+	
+	
+		
+	@Given("^Login lending page$")
+	public void Login_lending_page(){
+		
+		
+		driver.get(AbstractBaseStepDefShared.PropFileReader.configpropertyReader("ApplicationURL"));
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+	}
+		
+    @When("^Enter Username \"([^\"]*)\" and password \"([^\"]*)\"$")
+	public void enter_Username_x_and_password_y(String username,String password){
+		
+    	System.out.println("UserName : " + username + "Password : " + password);
+    	driver.findElement(By.xpath("//input[@name='email']")).sendKeys(username);
+		driver.findElement(By.xpath("//input[@name='pass']")).sendKeys(password);
+	}
+	
+    
+    @Then("^click login button$")
+    public void click_login_Button(){
+    	
+    	driver.findElement(By.xpath("//input[@value='Log In']")).click();
+    	driver.close();
+    }
+
+
+
+}
