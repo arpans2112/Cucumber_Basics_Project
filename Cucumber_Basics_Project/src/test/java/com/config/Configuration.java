@@ -2,7 +2,7 @@ package com.config;
 
 public class Configuration {
 	
-    public static final String Browser = "Mozila";
+    public static final String Browser = "Chrome";
 	
 //Environment Config file Variables
 	public static final String environmentFileName = "QA_Environment.properties";    
